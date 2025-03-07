@@ -5,13 +5,8 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         [Range(1.0f, 10.0f), SerializeField] private float _speed;
+        [SerializeField] private Transform _cameraTransform;
 
-        [SerializeField] private Transform _cameraTransform; // Посилання на трансформ камери
-
-        private void FixedUpdate()
-        {
-            Move();
-        }
         
         private void Move()
         {
@@ -30,6 +25,11 @@ namespace Player
                            * _speed * Time.fixedDeltaTime;
 
             transform.position += move;
+        }
+        
+        private void FixedUpdate()
+        {
+            Move();
         }
     }
 }
