@@ -33,20 +33,20 @@ namespace Alarm
 
         private void Update()
         {
-            float _volumeTimedStep = _volumeStep * Time.fixedDeltaTime;
+            float volumeTimedStep = _volumeStep * Time.fixedDeltaTime;
 
             if (_isPlaying)
             {
                 if (_audioSource.volume > _maxVolume) return;
                 
-                _audioSource.volume += _volumeTimedStep;
+                _audioSource.volume += volumeTimedStep;
             }
 
             else
             {
                 if (_audioSource.volume < _minVolume) return;
                 
-                _audioSource.volume -= _volumeTimedStep;
+                _audioSource.volume -= volumeTimedStep;
             }
         }
         

@@ -14,7 +14,7 @@ namespace Alarm
         private void PlayAction(Collider collider, bool shouldStart)
         {
             if (collider.TryGetComponent<Player.Player>
-                    (out Player.Player player))
+                    (out Player.Player _))
             {
                 ShouldStartAlarm?.Invoke(shouldStart);
             }
